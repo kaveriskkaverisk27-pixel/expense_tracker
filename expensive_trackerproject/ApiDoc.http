@@ -1,0 +1,61 @@
+#API call for create user
+###
+POST http://127.0.0.1:8000/create  
+Content-Type: application/json
+Authorization: Basic admin:admin
+
+{
+    "title":"breakfast",
+    "amount":"150",
+    "category":"bill",
+    "payment":"UPI"
+}
+
+#API call for view total user details
+###
+GET http://127.0.0.1:8000/create 
+Authorization: Basic admin:admin
+
+#API call for update
+###
+PUT http://127.0.0.1:8000/details/1
+Content-Type: application/json
+Authorization: Basic admin:admin
+
+{
+     "title":"lunch",
+    "amount":"4500",
+    "category":"food",
+    "payment":"card"
+}
+
+#API call for retreive one data
+###
+GET http://127.0.0.1:8000/details/1
+Authorization: Basic admin:admin
+
+#API call for delete data
+###
+DELETE http://127.0.0.1:8000/details/3
+Authorization: Basic admin:admin
+
+#--------FILTER----------------#
+###
+GET http://127.0.0.1:8000/create?category=bill
+Authorization: Basic admin:admin
+
+###
+GET http://127.0.0.1:8000/create?payment=card
+Authorization: Basic admin:admin
+
+###
+GET http://127.0.0.1:8000/create?search=lunch
+Authorization: Basic admin:admin
+
+###
+GET http://127.0.0.1:8000/create?ordering=amount
+Authorization: Basic admin:admin
+
+###
+GET http://127.0.0.1:8000/create?ordering=-created_at
+Authorization: Basic admin:admin
